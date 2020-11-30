@@ -2,6 +2,7 @@ name: Add a new GitHub Project card linked to a GitHub issue to the specified pr
 on: [issues]
 jobs:
   github-actions-automate-projects:
+    if: contains(github.event.issues.labels.*.name, 'cpi')
     runs-on: ubuntu-latest
     steps:
     - name: add-new-issues-to-repository-based-project-column
